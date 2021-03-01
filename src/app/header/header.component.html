@@ -1,22 +1,27 @@
-<header class="fixed-top" id="header">
-  <div class="container d-flex align-items-center justify-content-between">
+<!--l-header-->
+<header class="fixed-top " id="header">
+<!--  nav bd-grid-->
+  <div class="container d-flex align-items-center justify-content-between ">
+<!--    div-->
     <h1 class="logo"><a href="#">JCodeX</a></h1>
 
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="container-fluid d1">
-        <button class="navbar-toggler shadow-none" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<!--    div  nav__menu-->
+    <nav class="navbar navbar-expand-lg navbar-light ">
+<!--        ul nav__list-->
         <div class="collapse navbar-collapse d2" id="navbarSupportedContent">
-          <div class="navbar-nav d3">
-            <div class="d4 nav-item" *ngFor="let item of menuItems">
-              <a class="nav-link " href="{{item.linkUrl}}">{{item.linkName}}</a>
-            </div>
+<!--          li nav__item-->
+          <div *ngFor="let item of menuItems" class="d4 nav-item">
+            <a class="nav-link " href="{{item.linkUrl}}">{{item.linkName}}</a>
           </div>
-
         </div>
-      </div>
+
+<!--      div nav__toggle-->
+      <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+              class="navbar-toggler shadow-none"
+              data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+<!--        i bx bx-menu-->
+        <span class="navbar-toggler-icon nav__toggle"></span>
+      </button>
     </nav>
   </div>
 </header>
