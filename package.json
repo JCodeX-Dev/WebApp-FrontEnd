@@ -19,7 +19,6 @@
     "@angular/platform-browser": "~11.2.0",
     "@angular/platform-browser-dynamic": "~11.2.0",
     "@angular/router": "~11.2.0",
-    "bootstrap": "^5.0.0-beta2",
     "boxicons": "^2.0.7",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
