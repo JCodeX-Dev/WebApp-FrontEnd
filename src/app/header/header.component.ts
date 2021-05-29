@@ -13,9 +13,10 @@ export class HeaderComponent implements OnInit {
   menuItems = [
     {linkId: 1, linkName: 'Home', linkUrl: '#home'},
     {linkId: 2, linkName: 'About', linkUrl: '#about'},
-    {linkId: 3, linkName: 'Projects', linkUrl: '#projects'},
-    {linkId: 4, linkName: 'Blogs', linkUrl: '#blogs'},
-    {linkId: 5, linkName: 'Contact', linkUrl: '#contact'}
+    {linkId: 3, linkName: 'Skills', linkUrl: '#skills'},
+    {linkId: 4, linkName: 'Projects', linkUrl: '#projects'},
+    {linkId: 5, linkName: 'Blogs', linkUrl: '#blogs'},
+    {linkId: 6, linkName: 'Contact', linkUrl: '#contact'}
   ];
 
 
