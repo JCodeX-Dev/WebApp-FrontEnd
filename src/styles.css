@@ -104,3 +104,21 @@ img{
   height: auto;
 }
 
+/*==================== REUSABLE CSS CLASSES ====================*/
+.section{
+  padding: 2rem 0 4rem;
+}
+
+.section_title{
+  font-size: var(--h1-font-size);
+}
+
+.section_subtitle{
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-3);
+}
+
+.section_title, .section_subtitle{
+  text-align: center;
+}
