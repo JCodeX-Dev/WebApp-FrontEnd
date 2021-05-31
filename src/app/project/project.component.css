@@ -1,0 +1,18 @@
+/*==================== PORTFOLIO ====================*/
+.project_conatiner{
+  overflow: initial;
+}
+
+.project_content{
+  padding: 0 1.5rem;
+}
+
+.project_img{
+  width: 265px;
+  border-radius: .5rem;
+  justify-self: center;
+}
+
+.project_title{
+
+}
