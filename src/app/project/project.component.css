@@ -1,5 +1,5 @@
 /*==================== PORTFOLIO ====================*/
-.project_conatiner{
+.project_conatainer{
   overflow: initial;
 }
 
@@ -14,5 +14,14 @@
 }
 
 .project_title{
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-5);
+}
 
+.project_description{
+  margin-bottom: var(--mb-0-75);
+}
+
+.project_button:hover .button_icon{
+  transform: translateX(.25rem);
 }
