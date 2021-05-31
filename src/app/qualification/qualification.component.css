@@ -62,6 +62,6 @@
   display: none;
 }
 
-.qualification_button.qualification_active{
-  color: var(--first-color);
-}
+/*.qualification_button.qualification_active{*/
+/*  color: var(--first-color);*/
+/*}*/
