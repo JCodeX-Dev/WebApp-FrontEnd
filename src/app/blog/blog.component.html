@@ -1,0 +1,125 @@
+<!--==================== blog ====================-->
+<section class="blog section" id="blog">
+  <h2 class="section_title">Blogs</h2>
+  <span class="section_subtitle">What I write about</span>
+
+  <div class="blog_container container grid">
+    <!--==================== blog 1 ====================-->
+    <div class="blog_content">
+      <div>
+        <i class="uil uil-web-grid blog_icon"></i>
+        <h3 class="blog_title">UI/UX <br> Designer</h3>
+      </div>
+
+      <span (click)="modalShow(b1)" class="button button--flex button--small button--link blog_button">
+        View More
+        <i class="uil uil-arrow-right button_icon"></i>
+      </span>
+
+      <div #b1 class="blog_modal">
+        <div class="blog_modal-content">
+          <h4 class="blog_modal-title">UI/UX <br> Designer</h4>
+          <i (click)="modalClose()" class="uil uil-times blog_modal-close"></i>
+
+          <ul class="blog_modal-services grid">
+            <li class="blog_modal-service">
+              <i class="uil uil-check-circle blog_modal-icon"></i>
+              <p>I develop user interface</p>
+            </li>
+            <li class="blog_modal-service">
+              <i class="uil uil-check-circle blog_modal-icon"></i>
+              <p>Web page development</p>
+            </li>
+            <li class="blog_modal-service">
+              <i class="uil uil-check-circle blog_modal-icon"></i>
+              <p>I create ux element interactions</p>
+            </li>
+            <li class="blog_modal-service">
+              <i class="uil uil-check-circle blog_modal-icon"></i>
+              <p>I position your company brand</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--==================== blog 2 ====================-->
+    <div class="blog_content">
+      <div>
+        <i class="uil uil-arrow blog_icon"></i>
+        <h3 class="blog_title">Frontend <br> Developer</h3>
+      </div>
+
+      <span (click)="modalShow(b2)" class="button button--flex button--small button--link blog_button">
+        View More
+        <i class="uil uil-arrow-right button_icon"></i>
+      </span>
+
+      <div #b2 class="blog_modal">
+        <div class="blog_modal-content">
+          <h4 class="blog_modal-title">Frontend <br> Developer</h4>
+          <i (click)="modalClose()" class="uil uil-times blog_modal-close"></i>
+
+          <ul class="blog_modal-services grid">
+            <li class="blog_modal-service">
+              <i class="uil uil-check-circle blog_modal-icon"></i>
+              <p>I develop user interface</p>
+            </li>
+            <li class="blog_modal-service">
+              <i class="uil uil-check-circle blog_modal-icon"></i>
+              <p>Web page development</p>
+            </li>
+            <li class="blog_modal-service">
+              <i class="uil uil-check-circle blog_modal-icon"></i>
+              <p>I create ux element interactions</p>
+            </li>
+            <li class="blog_modal-service">
+              <i class="uil uil-check-circle blog_modal-icon"></i>
+              <p>I position your company brand</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--==================== blog 3 ====================-->
+    <div class="blog_content">
+      <div>
+        <i class="uil uil-pen blog_icon"></i>
+        <h3 class="blog_title">Branding <br> Designer</h3>
+      </div>
+
+      <span (click)="modalShow(b3)" class="button button--flex button--small button--link blog_button">
+        View More
+        <i class="uil uil-arrow-right button_icon"></i>
+      </span>
+
+      <div #b3 class="blog_modal">
+        <div class="blog_modal-content">
+          <h4 class="blog_modal-title">Branding <br> Designer</h4>
+          <i (click)="modalClose()" class="uil uil-times blog_modal-close"></i>
+
+          <ul class="blog_modal-services grid">
+            <li class="blog_modal-service">
+              <i class="uil uil-check-circle blog_modal-icon"></i>
+              <p>I develop user interface</p>
+            </li>
+            <li class="blog_modal-service">
+              <i class="uil uil-check-circle blog_modal-icon"></i>
+              <p>Web page development</p>
+            </li>
+            <li class="blog_modal-service">
+              <i class="uil uil-check-circle blog_modal-icon"></i>
+              <p>I create ux element interactions</p>
+            </li>
+            <li class="blog_modal-service">
+              <i class="uil uil-check-circle blog_modal-icon"></i>
+              <p>I position your company brand</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
