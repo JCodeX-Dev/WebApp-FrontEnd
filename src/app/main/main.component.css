@@ -1,73 +1,82 @@
-.skill{
-  font-weight: normal;
-  font-size: 0.6em;
-  font-family: var(--bs-font-sans-serif);
-}
+/*==================== HOME ====================*/
+ .home_container{
+   gap: 1rem;
+ }
 
-/*===== HOME =====*/
-h1{
-  font-weight: bold;
-  font-family: "Poppins", sans-serif;
+.home_content{
+  grid-template-columns: .5fr 3fr;
+  padding-top: 3.5rem;
+  align-items: center;
 }
-.home{
-  height: calc(100vh - 3rem);
+.home_social{
+  display: grid;
+  grid-template-columns: max-content;
   row-gap: 1rem;
 }
-.home__data{
-  align-self: center;
+
+.home_social-icon{
+  font-size: 1.25rem;
+  color: var(--first-color);
 }
-.home__title{
+
+.home_social-icon:hover{
+  color: var(--first-color-alt);
+}
+
+.home_blob{
+  width: 200px;
+  fill: var(--first-color);
+}
+
+.home_blob-img{
+  width: 170px;
+}
+
+.home_data{
+  grid-column: 1/3;
+}
+
+.home_title{
   font-size: var(--big-font-size);
-  /*margin-bottom: var(--mb-5);*/
 }
-.home__title-color{
-  color: var(--first-color);
+
+.home_subtitle{
+  font-size: var(--h3-font-size);
+  color: var(--text-color);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-0-75);
 }
-.home__social{
-  display: flex;
-  flex-direction: column;
-}
-.home__social-icon{
-  width: max-content;
+
+.home_description{
   margin-bottom: var(--mb-2);
-  font-size: 1.5rem;
+}
+
+.home_scroll{
+  display: none;
+}
+
+.home_scroll-button{
   color: var(--first-color);
-}
-.home__social-icon:hover{
-  color: var(--second-color);
-}
-.home__img{
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 295px;
+  transition: .3s;
 }
 
-@media screen and (min-width: 768px){
-  .home{
-    height: 100vh;
-  }
-  .home__data{
-    align-self: flex-end;
-  }
-  .home__social{
-    padding-top: 0;
-    padding-bottom: 2.5rem;
-    flex-direction: row;
-    align-self: flex-end;
-  }
-  .home__social-icon{
-    margin-bottom: 0;
-    margin-right: var(--mb-4);
-  }
-  .home__img{
-    width: 457px;
-    bottom: 15%;
-  }
+.home_scroll-button:hover{
+  transform: translateY(.25rem);
 }
 
-@media screen and (min-width: 1024px){
-  .home__img{
-    left: 10%;
-  }
+.home_scroll-mouse{
+  font-size: 2rem;
 }
+
+.home_scroll-name{
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  margin-right: var(--mb-0-25);
+}
+
+.home_scroll-arrow{
+  font-size: 1.25rem;
+}
+
+
