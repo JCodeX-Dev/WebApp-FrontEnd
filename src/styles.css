@@ -1,6 +1,9 @@
 /*==================== GOOGLE FONTS ====================*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
+/*==================== SWIPER CSS ====================*/
+@import '~swiper/swiper-bundle.min.css';
+
 /*==================== VARIABLES CSS ====================*/
 :root {
   --header-height: 3rem;

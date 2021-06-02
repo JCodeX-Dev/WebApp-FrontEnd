@@ -12,6 +12,7 @@ import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { SkillComponent } from './skill/skill.component';
 import { QualificationComponent } from './qualification/qualification.component';
+import {SwiperModule} from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { QualificationComponent } from './qualification/qualification.component'
   imports: [
     BrowserModule,
     HttpClientModule,
+    SwiperModule
   ],
   bootstrap: [AppComponent]
 })
