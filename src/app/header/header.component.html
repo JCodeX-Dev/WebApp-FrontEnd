@@ -38,7 +38,12 @@
       </ul>
       <i (click)="closeNav()" class="uil uil-times nav_close" id="nav-close"></i>
     </div>
-    <div class="nav_btns">
+
+    <!-- Activate / deactivate the theme manually with the button -->
+    <div (click)="changeTheme()" class="nav_btns">
+      <!-- Theme Change Button -->
+      <i class="uil uil-moon change-theme" id="theme-button"></i>
+
       <div (click)="showNav()" class="nav_toggle" id="nav-toggle">
         <i class="uil uil-apps"></i>
       </div>

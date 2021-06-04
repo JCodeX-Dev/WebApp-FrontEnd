@@ -98,3 +98,20 @@
 .scroll-header{
   box-shadow: 0 -1px 4px rgba(0,0,0,.15);
 }
+
+/* ======== Button Dark/Light ========== */
+.nav_btns{
+  display: flex;
+  align-items: center;
+}
+
+.change-theme{
+  font-size: 1.25rem;
+  color: var(--text-color);
+  margin-right: var(--mb-1);
+  cursor: pointer;
+}
+
+.change-theme:hover{
+  color: var(--first-color);
+}
