@@ -115,3 +115,15 @@
 .change-theme:hover{
   color: var(--first-color);
 }
+
+/*==================== MEDIA QUERIES ====================*/
+/* For small devices */
+@media screen and (max-width: 350px){
+  .nav_menu{
+    padding: 2rem .25rem 4rem;
+  }
+
+  .nav_list{
+    column-gap: 0;
+  }
+}

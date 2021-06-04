@@ -96,3 +96,20 @@
   opacity: 1;
   visibility: visible;
 }
+
+/*==================== MEDIA QUERIES ====================*/
+/* For small devices */
+@media screen and (max-width: 350px){
+  .blog_container{
+    grid-template-columns: max-content;
+    justify-content: center;
+  }
+
+  .blog_content{
+    padding-right: 3.5rem;
+  }
+
+  .blog_modal{
+    padding: 0 .5rem;
+  }
+}

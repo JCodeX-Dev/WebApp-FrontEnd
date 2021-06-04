@@ -65,3 +65,11 @@
 /*.qualification_button.qualification_active{*/
 /*  color: var(--first-color);*/
 /*}*/
+
+/*==================== MEDIA QUERIES ====================*/
+/* For small devices */
+@media screen and (max-width: 350px){
+  .qualification_data{
+    gap: .5rem;
+  }
+}

@@ -71,15 +71,15 @@ export class HeaderComponent implements AfterViewInit {
       } else {
         document.querySelector('.nav_menu a[href*=' + sectionId + ']').classList.remove('active-link');
       }
-
-      const nav = document.getElementById('header');
-      // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
-      if (offset >= 80) {
-        nav.classList.add('scroll-header');
-      } else {
-        nav.classList.remove('scroll-header');
-      }
     });
+
+    const nav = document.getElementById('header');
+    // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
+    if (offset >= 80) {
+      nav.classList.add('scroll-header');
+    } else {
+      nav.classList.remove('scroll-header');
+    }
   }
 
   /*==================== DARK LIGHT THEME ====================*/

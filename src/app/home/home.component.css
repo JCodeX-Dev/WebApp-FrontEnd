@@ -79,4 +79,15 @@
   font-size: 1.25rem;
 }
 
+/*==================== MEDIA QUERIES ====================*/
+/* For small devices */
+@media screen and (max-width: 350px){
 
+  .home_content{
+    grid-template-columns: .25fr 3fr;
+  }
+
+  .home_blob{
+    width: 180px;
+  }
+}
