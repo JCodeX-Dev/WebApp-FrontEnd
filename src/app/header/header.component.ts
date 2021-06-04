@@ -46,10 +46,26 @@ export class HeaderComponent implements OnInit {
     navLink.forEach(n => n.addEventListener('click', linkAction));
   }
 
-  // @HostListener('window:scroll', [])
-  // // tslint:disable-next-line:typedef
-  // onWindowScroll() {
-  //   const offset = window.pageYOffset;
+  @HostListener('window:scroll', [])
+  // tslint:disable-next-line:typedef
+  onWindowScroll() {
+    const sections = document.querySelectorAll('section[id]');
+    const offset = window.pageYOffset;
+
+    sections.forEach(current => {
+      const sectionHeight = current.clientHeight;
+      const sectionTop = current.scrollTop;
+      const sectionId = current.getAttribute('id') ;
+      // console.log(sectionId);
+      console.log(sectionId + ' ' + offset + ' ' + sectionTop + ' ' + sectionHeight);
+      if (offset > sectionTop && offset <= (sectionTop + sectionHeight)){
+        document.querySelector('.nav_menu a[href*=' + sectionId + ']').classList.add('active-link');
+        console.log(true);
+      } else {
+        document.querySelector('.nav_menu a[href*=' + sectionId + ']').classList.remove('active-link');
+        console.log(false);
+      }
+    });
   //   if (offset > 100) {
   //     document.querySelector('header').classList.add('nv-sc');
   //     document.querySelector(':root').setAttribute('style','--nav-color: #fff');
@@ -57,7 +73,7 @@ export class HeaderComponent implements OnInit {
   //     document.querySelector('header').classList.remove('nv-sc');
   //     document.querySelector(':root').setAttribute('style','--nav-color: #035a6d');
   //   }
-  // }
+  }
   ngOnInit(): void {
   }
 }
