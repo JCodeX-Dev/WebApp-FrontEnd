@@ -75,6 +75,7 @@ export class HeaderComponent implements AfterViewInit {
   @HostListener('window:scroll', [])
   // tslint:disable-next-line:typedef
   onWindowScroll() {
+
     const offset = window.scrollY;
     const sections = document.querySelectorAll('section[id]');
     sections.forEach(current => {
@@ -87,6 +88,14 @@ export class HeaderComponent implements AfterViewInit {
         document.querySelector('.nav_menu a[href*=' + sectionId + ']').classList.add('active-link');
       } else {
         document.querySelector('.nav_menu a[href*=' + sectionId + ']').classList.remove('active-link');
+      }
+
+      const nav = document.getElementById('header');
+      // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
+      if (offset >= 80) {
+        nav.classList.add('scroll-header');
+      } else {
+        nav.classList.remove('scroll-header');
       }
     });
   }
