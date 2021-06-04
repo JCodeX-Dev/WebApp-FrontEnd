@@ -88,3 +88,8 @@
 .show-menu{
   bottom: 0;
 }
+
+/* Active Menu */
+.active-link{
+  color: var(--first-color);
+}
