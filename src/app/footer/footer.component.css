@@ -1,53 +1,53 @@
 /*==================== FOOTER ====================*/
-.footer{
+.footer {
   padding-top: 2rem;
   text-align: center;
 }
 
-.footer_container{
+.footer_container {
   row-gap: 3.5rem;
 }
 
-.footer_bg{
+.footer_bg {
   background-color: var(--first-color-second);
   padding: 2rem 0 3rem;
 }
 
-.footer_title{
+.footer_title {
   font-size: var(--h1-font-size);
   margin-bottom: var(--mb-0-25);
 }
 
-.footer_subtitle{
+.footer_subtitle {
   font-size: var(--small-font-size);
 }
 
-.footer_social{
+.footer_social {
   font-size: 1.25rem;
   margin-right: var(--mb-1-5);;
 }
 
-.footer_social:hover{
+.footer_social:hover {
   color: var(--first-color-lighter);
 }
 
-.footer_copy{
+.footer_copy {
   font-size: var(--small-font-size);
   color: var(--text-color-light);
   margin-top: var(--mb-3);
 }
 
-.footer_tech{
+.footer_tech {
   font-size: var(--small-font-size);
   color: var(--text-color-light);
 }
 
-.footer_title, .footer_subtitle, .footer_social{
+.footer_title, .footer_subtitle, .footer_social {
   color: #FFF;
 }
 
 /*============== SCROLL UP ================*/
-.scrollup{
+.scrollup {
   position: fixed;
   right: 1rem;
   bottom: -20%;
@@ -59,17 +59,17 @@
   transition: .4s;
 }
 
-.scrollup:hover{
+.scrollup:hover {
   background-color: var(--first-color-alt);
 }
 
-.scrollup_icon{
+.scrollup_icon {
   font-size: 1.5rem;
   color: #FFF;
 }
 
 /* Show Scroll */
-.show-scroll{
+.show-scroll {
   bottom: 5rem;
 }
 
@@ -78,5 +78,12 @@
 @media screen and (min-width: 768px) {
   .footer_container {
     padding: 0 1rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .footer_container {
+    padding: 0;
   }
 }

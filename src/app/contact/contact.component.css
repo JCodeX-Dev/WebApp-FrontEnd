@@ -1,41 +1,41 @@
 /*==================== CONTACT ME ====================*/
-.contact_container{
+.contact_container {
   row-gap: 3rem;
 }
 
-.contact_information{
+.contact_information {
   display: flex;
   margin-bottom: var(--mb-2);
 }
 
-.contact_icon{
+.contact_icon {
   font-size: 2rem;
   color: var(--first-color);
   margin-right: var(--mb-0-75);
 }
 
-.contact_title{
+.contact_title {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
 }
 
-.contact_subtitle{
+.contact_subtitle {
   font-size: var(--small-font-size);
   color: var(--text-color-light);
 }
 
-.contact_content{
+.contact_content {
   background-color: var(--input-color);
   border-radius: .5rem;
   padding: .75rem 1rem .25rem;
 }
 
-.contact_label{
+.contact_label {
   font-size: var(--smaller-font-size);
   color: var(--title-color);
 }
 
-.contact_input{
+.contact_input {
   width: 100%;
   background-color: var(--input-color);
   color: var(--text-color);
@@ -48,8 +48,19 @@
 
 /*==================== MEDIA QUERIES ====================*/
 /* For medium devices */
-@media screen and (min-width: 568px){
-  .contact_container{
+@media screen and (min-width: 568px) {
+  .contact_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .contact_form {
+    width: 460px;
+  }
+
+  .contact_inputs {
     grid-template-columns: repeat(2, 1fr);
   }
 }

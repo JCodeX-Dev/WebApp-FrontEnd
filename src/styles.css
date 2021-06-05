@@ -13,7 +13,7 @@
   --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
   /* HSL color mode */
-  --first-color:  hsl(var(--hue-color), 69%, 61%);
+  --first-color: hsl(var(--hue-color), 69%, 61%);
   --first-color-second: hsl(var(--hue-color), 69%, 61%);
   --first-color-alt: hsl(var(--hue-color), 57%, 53%);
   --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
@@ -73,7 +73,7 @@
 }
 
 /*========== Variables Dark theme ==========*/
-body.dark-theme{
+body.dark-theme {
   /* HSL color mode */
   --first-color-second: hsl(var(--hue-color), 30%, 8%);
   --title-color: hsl(var(--hue-color), 8%, 95%);
@@ -86,17 +86,17 @@ body.dark-theme{
 }
 
 /*==================== BASE ====================*/
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
-body{
+body {
   margin: 0 0 var(--header-height) 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
@@ -104,57 +104,57 @@ body{
   color: var(--text-color);
 }
 
-h1.h2.h3,h4{
+h1.h2.h3, h4 {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
 }
 
-ul{
+ul {
   list-style: none;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-img{
+img {
   max-width: 100%;
   height: auto;
 }
 
 /*==================== REUSABLE CSS CLASSES ====================*/
-.section{
+.section {
   padding: 2rem 0 4rem;
 }
 
-.section_title{
+.section_title {
   font-size: var(--h1-font-size);
 }
 
-.section_subtitle{
+.section_subtitle {
   display: block;
   font-size: var(--small-font-size);
   margin-bottom: var(--mb-3);
 }
 
-.section_title, .section_subtitle{
+.section_title, .section_subtitle {
   text-align: center;
 }
 
 /*==================== LAYOUT ====================*/
-.container{
+.container {
   max-width: 768px;
   margin-left: var(--mb-1-5);
   margin-right: var(--mb-1-5);
 }
 
-.grid{
+.grid {
   display: grid;
   gap: 1.5rem;
 }
 
 /*==================== BUTTONS ====================*/
-.button{
+.button {
   display: inline-block;
   background-color: var(--first-color);
   color: #FFF;
@@ -163,56 +163,56 @@ img{
   font-weight: var(--font-medium);
 }
 
-.button:hover{
+.button:hover {
   background-color: var(--first-color-alt);
 }
 
-.button_icon{
+.button_icon {
   font-size: 1.25rem;
   margin-left: var(--mb-0-25);
   transition: .3s;
 }
 
-.button--flex{
+.button--flex {
   display: inline-flex;
   align-items: center;
 }
 
-.button--small{
+.button--small {
   padding: .75rem 1rem;
 }
 
-.button--link{
+.button--link {
   padding: 0;
   background-color: transparent;
   color: var(--first-color);
 }
 
-.button--link:hover{
+.button--link:hover {
   background-color: transparent;
   color: var(--first-color-alt);
 }
 
 /*========== SCROLL BAR ==========*/
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: .60rem;
   background-color: var(--scroll-bar-color);
   border-radius: .5rem;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background-color: var(--scroll-thumb-color);
   border-radius: .5rem;
 }
 
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
   background-color: var(--text-color-light);
 }
 
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
-@media screen and (max-width: 350px){
-  .container{
+@media screen and (max-width: 350px) {
+  .container {
     margin-left: var(--mb-1);
     margin-right: var(--mb-1);
   }
@@ -220,29 +220,36 @@ img{
 }
 
 /* For medium devices */
-@media screen and (min-width: 568px){
+@media screen and (min-width: 568px) {
 
 }
 
-@media screen and (min-width: 768px){
-  .container{
+@media screen and (min-width: 768px) {
+  .container {
     margin-left: auto;
     margin-right: auto;
   }
 
-  body{
+  body {
     margin: 0;
   }
 
-  .section{
+  .section {
     padding: 6rem 0 2rem;
   }
-  .section_subtitle{
+
+  .section_subtitle {
     margin-bottom: 4rem;
   }
 
-  .main{
+  .main {
     padding: 0 1rem;
   }
 }
+
 /* For large devices */
+@media screen and (min-width: 1024px) {
+  .main {
+    padding: 0;
+  }
+}
