@@ -82,3 +82,15 @@
     justify-content: center;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .qualification_tabs{
+    justify-content: center;
+  }
+  .qualification_button{
+    margin: 0 var(--mb-1);
+  }
+  .qualification_sections{
+    grid-template-columns: .5fr;
+  }
+}

@@ -127,3 +127,32 @@
     column-gap: 0;
   }
 }
+/* For medium devices */
+@media screen and (min-width: 768px){
+  .header{
+    top: 0;
+    bottom: initial;
+  }
+
+  .header{
+    padding: 0 1rem;
+  }
+
+  .nav{
+    height: calc(var(--header-height) + 1.5rem);
+    column-gap: 1rem;
+  }
+  .nav_icon, .nav_close, .nav_toggle{
+    display: none;
+  }
+  .nav_list{
+    display: flex;
+    column-gap: 2rem;
+  }
+  .nav_menu{
+    margin-left: auto;
+  }
+  .change-theme{
+    margin: 0;
+  }
+}

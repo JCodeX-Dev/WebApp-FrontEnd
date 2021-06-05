@@ -72,3 +72,11 @@
 .show-scroll{
   bottom: 5rem;
 }
+
+/*==================== MEDIA QUERIES ====================*/
+/* For medium devices */
+@media screen and (min-width: 768px) {
+  .footer_container {
+    padding: 0 1rem;
+  }
+}

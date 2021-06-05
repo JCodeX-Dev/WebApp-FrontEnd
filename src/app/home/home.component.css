@@ -105,3 +105,22 @@
     justify-self: center;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .home_container{
+    row-gap: 5rem;
+  }
+  .home_content{
+    padding-top: 5.5rem;
+    column-gap: 2rem;
+  }
+  .home_blob{
+    width: 270px;
+  }
+  .home_scroll{
+    display: block;
+  }
+  .home_scroll-button{
+    margin-left: 3rem;
+  }
+}

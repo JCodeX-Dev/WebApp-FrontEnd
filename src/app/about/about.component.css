@@ -44,3 +44,21 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media screen and (min-width: 768px) {
+  .about_container{
+    column-gap: 5rem;
+  }
+  .about_img{
+    width: 350px;
+  }
+  .about_description{
+    text-align: initial;
+  }
+  .about_info{
+    justify-content: space-between;
+  }
+  .about_buttons{
+    justify-content: initial;
+  }
+}

@@ -62,3 +62,11 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+@media screen and (min-width: 768px) {
+  .project_img{
+    width: 320px;
+  }
+  .project_content{
+    align-items: center;
+  }
+}
