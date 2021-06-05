@@ -36,3 +36,11 @@
   display: flex;
   justify-content: center;
 }
+
+/*==================== MEDIA QUERIES ====================*/
+/* For medium devices */
+@media screen and (min-width: 568px){
+  .about_container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

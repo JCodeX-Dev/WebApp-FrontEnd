@@ -54,3 +54,11 @@
 .swiper-button-prev, .swiper-button-next, .swiper-pagination-bullet{
   outline: none;
 }
+
+/*==================== MEDIA QUERIES ====================*/
+/* For medium devices */
+@media screen and (min-width: 568px){
+  .project_content{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

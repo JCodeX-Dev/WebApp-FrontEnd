@@ -91,3 +91,17 @@
     width: 180px;
   }
 }
+
+/* For medium devices */
+@media screen and (min-width: 568px){
+  .home_content{
+    grid-template-columns: max-content 1fr 1fr;
+  }
+  .home_data{
+    grid-column: initial;
+  }
+  .home_img{
+    order: 1;
+    justify-self: center;
+  }
+}

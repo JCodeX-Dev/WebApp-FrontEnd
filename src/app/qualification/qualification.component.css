@@ -73,3 +73,12 @@
     gap: .5rem;
   }
 }
+
+/* For medium devices */
+@media screen and (min-width: 568px){
+  .qualification_sections{
+    display: grid;
+    grid-template-columns: .6fr;
+    justify-content: center;
+  }
+}
