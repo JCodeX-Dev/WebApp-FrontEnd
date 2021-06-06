@@ -5,12 +5,12 @@
 }
 
 .footer_container {
-  row-gap: 3.5rem;
+  /*row-gap: 3rem;*/
 }
 
 .footer_bg {
   background-color: var(--first-color-second);
-  padding: 2rem 0 3rem;
+  padding: 2rem 0 1rem;
 }
 
 .footer_title {
