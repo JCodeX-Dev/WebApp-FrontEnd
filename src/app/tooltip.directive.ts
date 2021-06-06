@@ -61,4 +61,5 @@ export class TooltipDirective {
     this.renderer.removeChild(this.el.nativeElement, this.tooltip);
     // on mouse over it will remove the opacity
   }
+  // Error on mouse leave - unable to remove child
 }
