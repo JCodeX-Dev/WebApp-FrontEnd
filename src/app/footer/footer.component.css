@@ -1,6 +1,7 @@
 /*==================== FOOTER ====================*/
 .footer {
   padding-top: 2rem;
+  align-items: center;
   text-align: center;
 }
 
@@ -22,9 +23,16 @@
   font-size: var(--small-font-size);
 }
 
+.footer_socials{
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--mb-1-5);
+  justify-content: center;
+}
+
 .footer_social {
   font-size: 1.25rem;
-  margin-right: var(--mb-1-5);;
+  /*margin-right: var(--mb-1-5);*/
 }
 
 .footer_social:hover {
