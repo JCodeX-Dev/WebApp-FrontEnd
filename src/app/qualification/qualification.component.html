@@ -5,12 +5,12 @@
 
   <div class="qualification_container container">
     <div class="qualification_tabs">
-      <div #education (click)="toggleTab(education, e)" class="qualification_button button--flex qualification_inactive">
+      <div #education (click)="toggleTab(education, e)" class="qualification_button button--flex ">
         <i class="uil uil-graduation-cap qualification_icon"></i>
         Education
       </div>
 
-      <div #work (click)="toggleTab(work,w)" class="qualification_button button--flex">
+      <div #work (click)="toggleTab(work,w)" class="qualification_button button--flex qualification_inactive">
         <i class="uil uil-briefcase-alt qualification_icon"></i>
         Work
       </div>
@@ -18,7 +18,7 @@
 
     <div class="qualification_sections">
       <!--==================== QUALIFICATION CONTENT 1 ====================-->
-      <div #e class="qualification_content qualification_inactive" data-content id="education">
+      <div #e class="qualification_content" data-content id="education">
         <!--==================== QUALIFICATION 1 ====================-->
         <div class="qualification_data">
           <div>
@@ -91,7 +91,7 @@
       </div>
 
       <!--==================== QUALIFICATION CONTENT 2 ====================-->
-      <div #w class="qualification_content" data-content id="work">
+      <div #w class="qualification_content qualification_inactive" data-content id="work">
         <!--==================== QUALIFICATION 1 ====================-->
         <div class="qualification_data">
           <div>

@@ -4,11 +4,11 @@
 }
 
 .project_content {
-  padding: 0 1.5rem;
+  padding: 0 3rem;
 }
 
 .project_img {
-  width: 265px;
+  width: 100%;
   border-radius: .5rem;
   justify-self: center;
 }
@@ -36,11 +36,11 @@
 }
 
 .swiper-button-prev {
-  left: -.5rem;
+  /*left: -.5rem;*/
 }
 
 .swiper-button-next {
-  right: -.5rem;
+  /*right: -.5rem;*/
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets {
