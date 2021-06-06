@@ -1,12 +1,12 @@
 <!--==================== HEADER ====================-->
 <header class="header" id="header">
   <nav class="nav container">
-    <a class="nav_logo" href="#">Jeremy Sam</a>
+    <a class="nav_logo" href="#">Jeremy</a>
 
     <div class="nav_menu" id="nav-menu">
       <ul class="nav_list grid">
         <li class="nav_item">
-          <a class="nav_link" href="#home">
+          <a class="nav_link active-link" href="#home">
             <i class="uil uil-estate nav_icon"></i> Home
           </a>
         </li>
@@ -21,8 +21,13 @@
           </a>
         </li>
         <li class="nav_item">
-          <a class="nav_link" href="#projects ">
+          <a class="nav_link" href="#projects">
             <i class="uil uil-briefcase-alt nav_icon"></i> Projects
+          </a>
+        </li>
+        <li class="nav_item">
+          <a class="nav_link" href="#blogs">
+            <i class="uil uil-briefcase-alt nav_icon"></i> Blogs
           </a>
         </li>
         <li class="nav_item">
@@ -33,7 +38,12 @@
       </ul>
       <i (click)="closeNav()" class="uil uil-times nav_close" id="nav-close"></i>
     </div>
+
+    <!-- Activate / deactivate the theme manually with the button -->
     <div class="nav_btns">
+      <!-- Theme Change Button -->
+      <i (click)="changeTheme()" class="uil uil-moon change-theme" id="theme-button"></i>
+
       <div (click)="showNav()" class="nav_toggle" id="nav-toggle">
         <i class="uil uil-apps"></i>
       </div>

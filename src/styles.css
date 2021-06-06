@@ -1,6 +1,9 @@
 /*==================== GOOGLE FONTS ====================*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
+/*==================== SWIPER CSS ====================*/
+@import '~swiper/swiper-bundle.min.css';
+
 /*==================== VARIABLES CSS ====================*/
 :root {
   --header-height: 3rem;
@@ -10,7 +13,7 @@
   --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
   /* HSL color mode */
-  --first-color:  hsl(var(--hue-color), 69%, 61%);
+  --first-color: hsl(var(--hue-color), 69%, 61%);
   --first-color-second: hsl(var(--hue-color), 69%, 61%);
   --first-color-alt: hsl(var(--hue-color), 57%, 53%);
   --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
@@ -20,6 +23,8 @@
   --input-color: hsl(var(--hue-color), 70%, 96%);
   --body-color: hsl(var(--hue-color), 60%, 99%);
   --container-color: #FFF;
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
 
   /*========== Font and typography ==========*/
   --body-font: 'Poppins', sans-serif;
@@ -29,6 +34,7 @@
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1.125rem;
+  --h4-font-size: 1rem;
   --normal-font-size: .938rem;
   --small-font-size: .813rem;
   --smaller-font-size: .75rem;
@@ -39,6 +45,7 @@
 
   /*========== Margenes Bottom ==========*/
   /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+  --mb-0-125: .125rem;
   --mb-0-25: .25rem;
   --mb-0-5: .5rem;
   --mb-0-75: .75rem;
@@ -61,24 +68,38 @@
     --h1-font-size: 2.25rem;
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
+    --h4-font-size: 1.125rem;
     --normal-font-size: 1rem;
     --small-font-size: .875rem;
     --smaller-font-size: .813rem;
   }
 }
 
+/*========== Variables Dark theme ==========*/
+body.dark-theme {
+  /* HSL color mode */
+  --first-color-second: hsl(var(--hue-color), 30%, 8%);
+  --title-color: hsl(var(--hue-color), 8%, 95%);
+  --text-color: hsl(var(--hue-color), 8%, 75%);
+  --input-color: hsl(var(--hue-color), 29%, 16%);
+  --body-color: hsl(var(--hue-color), 28%, 12%);
+  --container-color: hsl(var(--hue-color), 29%, 16%);
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+}
+
 /*==================== BASE ====================*/
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
-body{
+body {
   margin: 0 0 var(--header-height) 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
@@ -86,57 +107,58 @@ body{
   color: var(--text-color);
 }
 
-h1.h2.h3,h4{
+h1,h2,h3,h4 {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
 }
 
-ul{
+ul {
   list-style: none;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-img{
+img {
   max-width: 100%;
   height: auto;
 }
 
 /*==================== REUSABLE CSS CLASSES ====================*/
-.section{
+.section {
   padding: 2rem 0 4rem;
 }
 
-.section_title{
+.section_title {
   font-size: var(--h1-font-size);
+  color: var(--title-color);
 }
 
-.section_subtitle{
+.section_subtitle {
   display: block;
   font-size: var(--small-font-size);
   margin-bottom: var(--mb-3);
 }
 
-.section_title, .section_subtitle{
+.section_title, .section_subtitle {
   text-align: center;
 }
 
 /*==================== LAYOUT ====================*/
-.container{
+.container {
   max-width: 768px;
   margin-left: var(--mb-1-5);
   margin-right: var(--mb-1-5);
 }
 
-.grid{
+.grid {
   display: grid;
   gap: 1.5rem;
 }
 
 /*==================== BUTTONS ====================*/
-.button{
+.button {
   display: inline-block;
   background-color: var(--first-color);
   color: #FFF;
@@ -145,17 +167,117 @@ img{
   font-weight: var(--font-medium);
 }
 
-.button:hover{
+.button:hover {
   background-color: var(--first-color-alt);
 }
 
-.button_icon{
+.button_icon {
   font-size: 1.25rem;
   margin-left: var(--mb-0-25);
   transition: .3s;
 }
 
-.button--flex{
+.button--flex {
   display: inline-flex;
   align-items: center;
 }
+
+.button--small {
+  padding: .75rem 1rem;
+}
+
+.button--link {
+  padding: 0;
+  background-color: transparent;
+  color: var(--first-color);
+}
+
+.button--link:hover {
+  background-color: transparent;
+  color: var(--first-color-alt);
+}
+
+/*========== SCROLL BAR ==========*/
+::-webkit-scrollbar {
+  width: .60rem;
+  background-color: var(--scroll-bar-color);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-color);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-color-light);
+}
+
+/*==================== MEDIA QUERIES ====================*/
+/* For small devices */
+@media screen and (max-width: 350px) {
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+
+}
+
+/* For medium devices */
+@media screen and (min-width: 568px) {
+
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .section {
+    padding: 6rem 0 2rem;
+  }
+
+  .section_subtitle {
+    margin-bottom: 4rem;
+  }
+
+  .main {
+    padding: 0 1rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .main {
+    padding: 0;
+  }
+}
+
+/* For larger devices */
+@media screen and (min-width: 1400px) {
+  .section {
+    padding: 6rem 0 6rem;
+  }
+  /* Font size for large devices */
+  /*:root {*/
+  /*  --big-font-size: 3.25rem;*/
+  /*  --h1-font-size: 2.5rem;*/
+  /*  --h2-font-size: 1.75rem;*/
+  /*  --h3-font-size: 1.5rem;*/
+  /*  --normal-font-size: 1.125rem;*/
+  /*  --small-font-size: .9rem;*/
+  /*  --smaller-font-size: .875rem;*/
+  /*}*/
+}
+/*--big-font-size: 2rem;*/
+/*--h1-font-size: 1.5rem;*/
+/*--h2-font-size: 1.25rem;*/
+/*--h3-font-size: 1.125rem;*/
+/*--normal-font-size: .938rem;*/
+/*--small-font-size: .813rem;*/
+/*--smaller-font-size: .75rem;*/

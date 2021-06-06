@@ -1,0 +1,116 @@
+/*==================== FOOTER ====================*/
+.footer {
+  padding-top: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
+.footer_container {
+  /*row-gap: 3rem;*/
+}
+
+.footer_bg {
+  background-color: var(--first-color-second);
+  padding: 2rem 0 1rem;
+}
+
+.footer_title {
+  font-size: var(--h1-font-size);
+  margin-bottom: var(--mb-0-25);
+}
+
+.footer_subtitle {
+  font-size: var(--small-font-size);
+}
+
+.footer_socials{
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--mb-1-5);
+  justify-content: center;
+}
+
+.footer_social {
+  font-size: 1.25rem;
+  /*margin-right: var(--mb-1-5);*/
+}
+
+.footer_social:hover {
+  color: var(--first-color-lighter);
+}
+
+.footer_disclaimer {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+  margin-top: var(--mb-3);
+}
+
+/*.footer_tech {*/
+/*  font-size: var(--small-font-size);*/
+/*  color: var(--text-color-light);*/
+/*}*/
+
+.footer_title, .footer_subtitle, .footer_social {
+  color: #FFF;
+}
+
+/*============== SCROLL UP ================*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  background-color: var(--first-color);
+  opacity: .8;
+  padding: 0 .3rem;
+  border-radius: .4rem;
+  z-index: var(--z-tooltip);
+  transition: .4s;
+}
+
+.scrollup:hover {
+  background-color: var(--first-color-alt);
+}
+
+.scrollup_icon {
+  font-size: 1.5rem;
+  color: #FFF;
+}
+
+/* Show Scroll */
+.show-scroll {
+  bottom: 5rem;
+}
+
+/*==================== MEDIA QUERIES ====================*/
+/* For medium devices */
+@media screen and (min-width: 768px) {
+  .footer_container {
+    padding: 0 1rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .footer_container {
+    padding: 0;
+  }
+}
+
+/*========== ToolTip ==========*/
+.tooltip {
+  width: max-content;
+  background-color: var(--text-color-light);
+  color: #fff;
+  text-align: center;
+  padding: 0.25rem 0.25rem;
+  border-radius: .35rem;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+
+  /*width: 120px;*/
+  bottom: 100%;
+  left: 50%;
+  margin-left: -2rem; /* Use half of the width (120/2 = 60), to center the tooltip */
+}

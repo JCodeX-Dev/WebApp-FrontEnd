@@ -5,28 +5,34 @@ import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { MainComponent } from './main/main.component';
+import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ProjectComponent } from './project/project.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { SkillComponent } from './skill/skill.component';
+import { QualificationComponent } from './qualification/qualification.component';
+import {SwiperModule} from 'swiper/angular';
+import { TooltipDirective } from './tooltip.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MainComponent,
+    HomeComponent,
     AboutComponent,
     ProjectComponent,
     BlogComponent,
     ContactComponent,
-    SkillComponent
+    SkillComponent,
+    QualificationComponent,
+    TooltipDirective
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    SwiperModule
   ],
   bootstrap: [AppComponent]
 })
