@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { SkillComponent } from './skill/skill.component';
 import { QualificationComponent } from './qualification/qualification.component';
 import {SwiperModule} from 'swiper/angular';
+import { TooltipDirective } from './tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {SwiperModule} from 'swiper/angular';
     BlogComponent,
     ContactComponent,
     SkillComponent,
-    QualificationComponent
+    QualificationComponent,
+    TooltipDirective
   ],
   imports: [
     BrowserModule,
