@@ -142,3 +142,10 @@
     transform: translateX(-6rem);
   }
 }
+
+/* For larger devices */
+@media screen and (min-width: 1400px) {
+  .home_blob {
+    /*width: 350px;*/
+  }
+}

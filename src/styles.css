@@ -253,3 +253,27 @@ img {
     padding: 0;
   }
 }
+
+/* For larger devices */
+@media screen and (min-width: 1400px) {
+  .section {
+    padding: 6rem 0 6rem;
+  }
+  /* Font size for large devices */
+  /*:root {*/
+  /*  --big-font-size: 3.25rem;*/
+  /*  --h1-font-size: 2.5rem;*/
+  /*  --h2-font-size: 1.75rem;*/
+  /*  --h3-font-size: 1.5rem;*/
+  /*  --normal-font-size: 1.125rem;*/
+  /*  --small-font-size: .9rem;*/
+  /*  --smaller-font-size: .875rem;*/
+  /*}*/
+}
+/*--big-font-size: 2rem;*/
+/*--h1-font-size: 1.5rem;*/
+/*--h2-font-size: 1.25rem;*/
+/*--h3-font-size: 1.125rem;*/
+/*--normal-font-size: .938rem;*/
+/*--small-font-size: .813rem;*/
+/*--smaller-font-size: .75rem;*/

@@ -94,3 +94,10 @@
     grid-template-columns: .5fr;
   }
 }
+
+/* For larger devices */
+@media screen and (min-width: 1400px) {
+  .section {
+    /*padding: 2rem 0 4rem;*/
+  }
+}
