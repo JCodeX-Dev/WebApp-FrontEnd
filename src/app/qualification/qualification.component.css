@@ -9,6 +9,7 @@
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
   cursor: pointer;
+  color: var(--first-color);
 }
 
 .qualification_button:hover{
@@ -62,9 +63,9 @@
   display: none;
 }
 
-/*.qualification_button.qualification_active{*/
-/*  color: var(--first-color);*/
-/*}*/
+.qualification_button.qualification_inactive{
+  color: var(--text-color);
+}
 
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
