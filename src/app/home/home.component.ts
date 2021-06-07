@@ -9,6 +9,12 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
+  homeItems = [
+    {url: '#', icon: 'uil-linkedin-alt'},
+    {url: '#', icon: 'uil-github-alt'},
+    {url: '#', icon: 'uil-twitter-alt'}
+  ];
+
   ngOnInit(): void {
   }
 

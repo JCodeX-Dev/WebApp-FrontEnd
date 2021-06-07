@@ -3,14 +3,8 @@
   <div class="home_container container grid">
     <div class="home_content grid">
       <div class="home_social">
-        <a class="home_social-icon" href="#" target="_blank">
-          <i class="uil uil-linkedin-alt"></i>
-        </a>
-        <a class="home_social-icon" href="#" target="_blank">
-          <i class="uil uil-github-alt"></i>
-        </a>
-        <a class="home_social-icon" href="#" target="_blank">
-          <i class="uil uil-twitter-alt"></i>
+        <a class="home_social-icon" href="{{item.url}}" target="_blank" *ngFor="let item of homeItems">
+          <i class="uil {{item.icon}}"></i>
         </a>
       </div>
       <div class="home_img">
