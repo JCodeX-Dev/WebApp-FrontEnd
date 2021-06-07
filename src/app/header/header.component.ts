@@ -10,18 +10,14 @@ export class HeaderComponent implements AfterViewInit {
   constructor() {
   }
 
-  /*==================== DARK LIGHT THEME ====================*/
-  ngAfterViewInit(): void {
-  }
-
-  // menuItems = [
-  //   {linkId: 1, linkName: 'Home', linkUrl: '#home'},
-  //   {linkId: 2, linkName: 'About', linkUrl: '#about'},
-  //   {linkId: 3, linkName: 'Skills', linkUrl: '#skills'},
-  //   {linkId: 4, linkName: 'Projects', linkUrl: '#projects'},
-  //   {linkId: 5, linkName: 'Blogs', linkUrl: '#blogs'},
-  //   {linkId: 6, linkName: 'Contact', linkUrl: '#contact'}
-  // ];
+  menuItems = [
+    {linkId: 1, linkName: 'Home', linkUrl: '#home', linkIcon: 'uil-estate'},
+    {linkId: 2, linkName: 'About', linkUrl: '#about', linkIcon: 'uil-user'},
+    {linkId: 3, linkName: 'Skills', linkUrl: '#skills', linkIcon: 'uil-file-alt'},
+    {linkId: 4, linkName: 'Projects', linkUrl: '#projects', linkIcon: 'uil-briefcase-alt'},
+    {linkId: 5, linkName: 'Blogs', linkUrl: '#blogs', linkIcon: 'uil-edit'},
+    {linkId: 6, linkName: 'Contact', linkUrl: '#contact', linkIcon: 'uil-message'}
+  ];
 
 
   /*===== MENU SHOW =====*/
@@ -110,5 +106,9 @@ export class HeaderComponent implements AfterViewInit {
     // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme());
     localStorage.setItem('selected-icon', getCurrentIcon());
+  }
+
+
+  ngAfterViewInit(): void {
   }
 }

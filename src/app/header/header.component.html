@@ -5,36 +5,12 @@
 
     <div class="nav_menu" id="nav-menu">
       <ul class="nav_list grid">
-        <li class="nav_item">
-          <a class="nav_link active-link" href="#home">
-            <i class="uil uil-estate nav_icon"></i> Home
+        <li class="nav_item" *ngFor="let item of menuItems">
+          <a class="nav_link active-link" href="{{item.linkUrl}}">
+            <i class="uil {{item.linkIcon}} nav_icon"></i> {{item.linkName}}
           </a>
         </li>
-        <li class="nav_item">
-          <a class="nav_link" href="#about">
-            <i class="uil uil-user nav_icon"></i> About
-          </a>
-        </li>
-        <li class="nav_item">
-          <a class="nav_link" href="#skills">
-            <i class="uil uil-file-alt nav_icon"></i> Skills
-          </a>
-        </li>
-        <li class="nav_item">
-          <a class="nav_link" href="#projects">
-            <i class="uil uil-briefcase-alt nav_icon"></i> Projects
-          </a>
-        </li>
-        <li class="nav_item">
-          <a class="nav_link" href="#blogs">
-            <i class="uil uil-briefcase-alt nav_icon"></i> Blogs
-          </a>
-        </li>
-        <li class="nav_item">
-          <a class="nav_link" href="#contact">
-            <i class="uil uil-message nav_icon"></i> Contact Me
-          </a>
-        </li>
+
       </ul>
       <i (click)="closeNav()" class="uil uil-times nav_close" id="nav-close"></i>
     </div>
