@@ -4,4 +4,5 @@ export interface Footer {
   stackoverflow: string;
   instagram: string;
   linkedin: string;
+  twitter: string;
 }

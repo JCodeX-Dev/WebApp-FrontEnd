@@ -32,7 +32,8 @@ export class FooterComponent implements OnInit {
       github: data.github,
       stackoverflow: data.stackoverflow,
       instagram: data.instagram,
-      linkedin: data.linkedin
+      linkedin: data.linkedin,
+      twitter: data.twitter
     });
   }
 
