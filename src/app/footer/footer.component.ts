@@ -1,4 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
+import {AppConfigService} from '../app-config.service';
+import {Footer} from './footer';
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +9,7 @@ import {Component, HostListener, OnInit} from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() {
+  constructor(private appService: AppConfigService, private footer: Footer) {
   }
 
   // SHOW SCROLL UP
@@ -23,7 +25,19 @@ export class FooterComponent implements OnInit {
     }
   }
 
+  // tslint:disable-next-line:typedef
+  showFooterResource(){
+    this.appService.getFooterResource().subscribe((data: Footer) => this.footer = {
+      name: data.name,
+      github: data.github,
+      stackoverflow: data.stackoverflow,
+      instagram: data.instagram,
+      linkedin: data.linkedin
+    });
+  }
+
   ngOnInit(): void {
+    this.showFooterResource();
   }
 
 }
