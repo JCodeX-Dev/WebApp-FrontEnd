@@ -1,13 +1,15 @@
-import {AfterViewInit, Component, HostListener} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
+import {AppConfigService} from '../app-config.service';
+import {Header} from './header';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements AfterViewInit {
+export class HeaderComponent implements OnInit {
 
-  constructor() {
+  constructor(private appService: AppConfigService, private header: Header) {
   }
 
   menuItems = [
@@ -108,7 +110,14 @@ export class HeaderComponent implements AfterViewInit {
     localStorage.setItem('selected-icon', getCurrentIcon());
   }
 
+  // tslint:disable-next-line:typedef
+  showHeaderResource(){
+    this.appService.getHeaderResource().subscribe((data: Header) => this.header = {
+      navLogo: data.navLogo
+    });
+  }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
+    this.showHeaderResource();
   }
 }
