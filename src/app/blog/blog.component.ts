@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AppConfigService} from '../app-config.service';
+import {Blog} from './blog';
 
 @Component({
   selector: 'app-blog',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appService: AppConfigService, private blogs: Blog[]) { }
 
   // tslint:disable-next-line:typedef
   modalShow(modalView){
@@ -19,6 +21,15 @@ export class BlogComponent implements OnInit {
     const modalViews = document.querySelectorAll('.blog_modal');
     modalViews.forEach((modalView) => {
       modalView.classList.remove('active-modal');
+    });
+  }
+
+  // resource handling
+
+  // tslint:disable-next-line:typedef
+  showBlogResource(){
+    this.appService.getBlogResource().subscribe((data: Blog[]) => {
+      this.blogs = data;
     });
   }
 

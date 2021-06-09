@@ -7,11 +7,11 @@ import {About} from './about/about';
 import {Skills} from './skill/skills';
 import {Qualifications} from './qualification/qualifications';
 import {Projects} from './project/projects';
-import {Blogs} from './blog/blogs';
 import {Contact} from './contact/contact';
 import {Footer} from './footer/footer';
 import {catchError, retry} from 'rxjs/operators';
 import {throwError} from 'rxjs';
+import {Blog} from './blog/blog';
 
 @Injectable({
   providedIn: 'root'
@@ -39,23 +39,23 @@ export class AppConfigService {
   }
 
   // tslint:disable-next-line:typedef
-  getSkillsResource() {
+  getSkillResource() {
     return this.http.get<Skills>(this.apiEndpoint + apiResource.skills).pipe(retry(3), catchError(this.handleError));
   }
 
 // tslint:disable-next-line:typedef
-  getQualificationsResource() {
+  getQualificationResource() {
     return this.http.get<Qualifications>(this.apiEndpoint + apiResource.qualifications).pipe(retry(3), catchError(this.handleError));
   }
 
   // tslint:disable-next-line:typedef
-  getProjectsResource() {
+  getProjectResource() {
     return this.http.get<Projects>(this.apiEndpoint + apiResource.projects).pipe(retry(3), catchError(this.handleError));
   }
 
   // tslint:disable-next-line:typedef
-  getBlogsResource() {
-    return this.http.get<Blogs>(this.apiEndpoint + apiResource.blogs).pipe(retry(3), catchError(this.handleError));
+  getBlogResource() {
+    return this.http.get<Blog[]>(this.apiEndpoint + apiResource.blogs).pipe(retry(3), catchError(this.handleError));
   }
 
   // tslint:disable-next-line:typedef
