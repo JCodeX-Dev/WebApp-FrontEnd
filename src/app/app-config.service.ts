@@ -24,51 +24,47 @@ export class AppConfigService {
   }
 
   // tslint:disable-next-line:typedef
-  getHeaderData() {
+  getHeaderResource() {
     return this.http.get<Header>(this.apiEndpoint + apiResource.header).pipe(retry(3), catchError(this.handleError));
-    // tap( // Log the result or error
-    //   data => this.log(filename, data),
-    //   error => this.logError(filename, error)
-    // )
   }
 
   // tslint:disable-next-line:typedef
-  getHomeData() {
+  getHomeResource() {
     return this.http.get<Home>(this.apiEndpoint + apiResource.home).pipe(retry(3), catchError(this.handleError));
   }
 
   // tslint:disable-next-line:typedef
-  getAboutData() {
+  getAboutResource() {
     return this.http.get<About>(this.apiEndpoint + apiResource.about).pipe(retry(3), catchError(this.handleError));
   }
 
   // tslint:disable-next-line:typedef
-  getSkillsData() {
+  getSkillsResource() {
     return this.http.get<Skills>(this.apiEndpoint + apiResource.skills).pipe(retry(3), catchError(this.handleError));
   }
 
 // tslint:disable-next-line:typedef
-  getQualificationsData() {
+  getQualificationsResource() {
     return this.http.get<Qualifications>(this.apiEndpoint + apiResource.qualifications).pipe(retry(3), catchError(this.handleError));
   }
 
   // tslint:disable-next-line:typedef
-  getProjectsData() {
+  getProjectsResource() {
     return this.http.get<Projects>(this.apiEndpoint + apiResource.projects).pipe(retry(3), catchError(this.handleError));
   }
 
   // tslint:disable-next-line:typedef
-  getBlogsData() {
+  getBlogsResource() {
     return this.http.get<Blogs>(this.apiEndpoint + apiResource.blogs).pipe(retry(3), catchError(this.handleError));
   }
 
   // tslint:disable-next-line:typedef
-  getContactData() {
+  getContactResource() {
     return this.http.get<Contact>(this.apiEndpoint + apiResource.contact).pipe(retry(3), catchError(this.handleError));
   }
 
   // tslint:disable-next-line:typedef
-  getFooterData() {
+  getFooterResource() {
     return this.http.get<Footer>(this.apiEndpoint + apiResource.footer).pipe(retry(3), catchError(this.handleError));
   }
 
