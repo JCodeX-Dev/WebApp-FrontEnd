@@ -1,5 +1,7 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {Swiper, Navigation, Pagination} from 'swiper/core';
+import {AfterViewInit, Component} from '@angular/core';
+import {Navigation, Pagination, Swiper} from 'swiper/core';
+import {AppConfigService} from '../app-config.service';
+import {Project} from './project';
 
 Swiper.use([Navigation, Pagination]);
 
@@ -11,9 +13,11 @@ Swiper.use([Navigation, Pagination]);
 export class ProjectComponent implements AfterViewInit {
   swiper: Swiper;
 
-  constructor() { }
+  constructor(private appService: AppConfigService, private project: Project[]) {
+  }
 
-  ngAfterViewInit(): void {
+  // tslint:disable-next-line:typedef
+  showSwiper() {
     this.swiper = new Swiper('.project_container', {
       cssMode: true,
       loop: true,
@@ -26,5 +30,17 @@ export class ProjectComponent implements AfterViewInit {
         clickable: true,
       },
     });
-    }
+  }
+
+
+  // tslint:disable-next-line:typedef
+  showProjectResource() {
+    this.appService.getProjectResource().subscribe((data: Project[]) => this.project = data);
+  }
+
+  ngAfterViewInit(): void {
+    this.showSwiper();
+    this.showProjectResource();
+  }
+
 }

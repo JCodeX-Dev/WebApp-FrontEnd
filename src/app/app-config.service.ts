@@ -6,7 +6,7 @@ import {Home} from './home/home';
 import {About} from './about/about';
 import {Skills} from './skill/skills';
 import {Qualifications} from './qualification/qualifications';
-import {Projects} from './project/projects';
+import {Project} from './project/project';
 import {Contact} from './contact/contact';
 import {Footer} from './footer/footer';
 import {catchError, retry} from 'rxjs/operators';
@@ -50,7 +50,7 @@ export class AppConfigService {
 
   // tslint:disable-next-line:typedef
   getProjectResource() {
-    return this.http.get<Projects>(this.apiEndpoint + apiResource.projects).pipe(retry(3), catchError(this.handleError));
+    return this.http.get<Project[]>(this.apiEndpoint + apiResource.projects).pipe(retry(3), catchError(this.handleError));
   }
 
   // tslint:disable-next-line:typedef
