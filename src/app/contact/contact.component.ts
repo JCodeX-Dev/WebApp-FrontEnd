@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AppConfigService} from '../app-config.service';
+import {Contact} from './contact';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appService: AppConfigService, private contact: Contact) { }
+
+  // tslint:disable-next-line:typedef
+  showContactResource(){
+    this.appService.getContactResource().subscribe((data: Contact) => this.contact = {
+      phone: data.phone;
+      email: data.email;
+      location: data.location;
+    });
+  }
 
   ngOnInit(): void {
+    this.showContactResource();
   }
 
 }
