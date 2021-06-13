@@ -9,7 +9,8 @@ import {Footer} from './footer';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private appService: AppConfigService, private footer: Footer) {
+  footer: Footer;
+  constructor(private appService: AppConfigService) {
   }
 
   // SHOW SCROLL UP
@@ -38,7 +39,7 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.showFooterResource();
+    // this.showFooterResource();
   }
 
 }
