@@ -5,11 +5,11 @@ import {Header} from './header/header';
 import {Home} from './home/home';
 import {About} from './about/about';
 import {Skills} from './skill/skills';
-import {Qualifications} from './qualification/qualifications';
+import {Qualification} from './qualification/qualification';
 import {Project} from './project/project';
 import {Contact} from './contact/contact';
 import {Footer} from './footer/footer';
-import {catchError, retry} from 'rxjs/operators';
+import {catchError, map, retry} from 'rxjs/operators';
 import {throwError} from 'rxjs';
 import {Blog} from './blog/blog';
 
@@ -25,6 +25,7 @@ export class AppConfigService {
 
   // tslint:disable-next-line:typedef
   getHeaderResource() {
+    console.log('running');
     return this.http.get<Header>(this.apiEndpoint + apiResource.header).pipe(retry(3), catchError(this.handleError));
   }
 
@@ -45,7 +46,7 @@ export class AppConfigService {
 
 // tslint:disable-next-line:typedef
   getQualificationResource() {
-    return this.http.get<Qualifications>(this.apiEndpoint + apiResource.qualifications).pipe(retry(3), catchError(this.handleError));
+    return this.http.get<Qualification>(this.apiEndpoint + apiResource.qualifications).pipe(retry(3), catchError(this.handleError));
   }
 
   // tslint:disable-next-line:typedef
@@ -68,6 +69,22 @@ export class AppConfigService {
     return this.http.get<Footer>(this.apiEndpoint + apiResource.footer).pipe(retry(3), catchError(this.handleError));
   }
 
+  // tslint:disable-next-line:typedef
+  getFileResource(section) {
+    // const headers = new HttpHeaders({ 'Content-Type': 'application/pdf', responseType : 'blob'});
+    // tslint:disable-next-line:max-line-length
+    return this.http.get(this.apiEndpoint + section, {observe: 'response', responseType: 'blob'}).pipe(map((res) => {
+      const data = {
+        image: new Blob([res.body], {type: res.headers.get('Content-Type')}),
+        filename: this.getFilenameFromContentDisposition(res.headers.get('Content-Disposition'))
+      };
+      return data;
+    }), retry(3), catchError(this.handleError));
+  }
+
+  private getFilenameFromContentDisposition(contentDisposition: string): string {
+    return contentDisposition.split(';')[2].split('=')[1].replace(/\"/g, '');
+  }
 
   // tslint:disable-next-line:typedef
   private handleError(error: HttpErrorResponse) {
