@@ -9,7 +9,9 @@ import {Header} from './header';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private appService: AppConfigService, private header: Header) {
+  header: Header;
+
+  constructor(private appService: AppConfigService) {
   }
 
   menuItems = [
@@ -112,9 +114,7 @@ export class HeaderComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   showHeaderResource(){
-    this.appService.getHeaderResource().subscribe((data: Header) => this.header = {
-      navLogo: data.navLogo
-    });
+    this.appService.getHeaderResource().subscribe((data: Header) => this.header = data);
   }
 
   ngOnInit(): void {

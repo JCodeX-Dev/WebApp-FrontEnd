@@ -1,3 +1,3 @@
 export interface Header {
-  navLogo: any;
+  navLogo: string;
 }
