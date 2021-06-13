@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Home} from './home';
 import {AppConfigService} from '../app-config.service';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -9,22 +10,37 @@ import {AppConfigService} from '../app-config.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private appService: AppConfigService, private home: Home) {
+  home: Home;
+
+  constructor(private appService: AppConfigService) {
   }
 
-  homeItems = [
-    {url: '#', icon: 'uil-linkedin-alt'},
-    {url: '#', icon: 'uil-github-alt'},
-    {url: '#', icon: 'uil-twitter-alt'}
-  ];
+  homeItems$;
 
   // tslint:disable-next-line:typedef
   showHomeResource() {
-    this.appService.getHomeResource().subscribe((data: Home) => this.home = data);
+    this.homeItems$ = this.appService.getHomeResource().pipe(map((data: Home) => {
+      this.home = data;
+      return [
+        {url: this.home.linkedin, icon: 'uil-linkedin-alt'},
+        {url: this.home.github, icon: 'uil-github-alt'},
+        {url: this.home.twitter, icon: 'uil-twitter-alt'}
+      ];
+    }));
+  }
+
+  // tslint:disable-next-line:typedef
+  showImageResource(section) {
+    this.appService.getFileResource(section).subscribe((res) => {
+      const fileURL = URL.createObjectURL(res.image);
+      const element = document.getElementById('imgh');
+      element.setAttribute('href', fileURL);
+    });
   }
 
   ngOnInit(): void {
     this.showHomeResource();
+    this.showImageResource('/home/image');
   }
 
 }
