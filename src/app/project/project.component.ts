@@ -13,7 +13,8 @@ Swiper.use([Navigation, Pagination]);
 export class ProjectComponent implements AfterViewInit {
   swiper: Swiper;
 
-  constructor(private appService: AppConfigService, private project: Project[]) {
+  project: Project[];
+  constructor(private appService: AppConfigService) {
   }
 
   // tslint:disable-next-line:typedef
@@ -40,7 +41,7 @@ export class ProjectComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.showSwiper();
-    this.showProjectResource();
+    // this.showProjectResource();
   }
 
 }
