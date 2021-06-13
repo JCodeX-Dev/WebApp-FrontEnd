@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
 };
-export const baseURL = 'localhost:8080/api/profile/';
+export const baseURL = 'http://localhost:8080/api/profile/';
 export const profile = '1';
 export const apiResource = {
   header: '/header',
