@@ -9,10 +9,13 @@ import {Contact} from './contact';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private appService: AppConfigService, private contact: Contact) { }
+  contact: Contact;
+
+  constructor(private appService: AppConfigService) {
+  }
 
   // tslint:disable-next-line:typedef
-  showContactResource(){
+  showContactResource() {
     this.appService.getContactResource().subscribe((data: Contact) => this.contact = {
       phone: data.phone,
       email: data.email,
@@ -21,7 +24,7 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.showContactResource();
+    // this.showContactResource();
   }
 
 }
