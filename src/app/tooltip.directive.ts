@@ -27,7 +27,6 @@ export class TooltipDirective {
 
   // tslint:disable-next-line:typedef
   showTooltip() {
-    // this.tooltip = this.el.nativeElement;
     this.tooltip = this.renderer.createElement('span');
     // creating a span
 
