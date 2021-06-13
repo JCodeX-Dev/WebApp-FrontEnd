@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {AppConfigService} from '../app-config.service';
 import {About} from './about';
 
+// import * as fileSaver from 'file-saver';
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -9,20 +11,42 @@ import {About} from './about';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private appService: AppConfigService, private about: About) {
+  about: About;
+  image: any;
+
+  constructor(private appService: AppConfigService) {
   }
 
   // tslint:disable-next-line:typedef
   showAboutResource() {
     this.appService.getAboutResource().subscribe((data: About) => this.about = {
-      image: data.image,
-      intro: data.intro,
-      cv: data.cv
+      description: data.description,
+    });
+  }
+
+  // tslint:disable-next-line:typedef
+  showFileResource(section) {
+    this.appService.getFileResource(section).subscribe((resp) => {
+      const fileURL = URL.createObjectURL(resp.image);
+      const element = document.getElementById('cv');
+      element.setAttribute('href', fileURL);
+      element.setAttribute('download', resp.filename);
+    });
+  }
+
+  // tslint:disable-next-line:typedef
+  showImageResource(section) {
+    this.appService.getFileResource(section).subscribe((res) => {
+      const fileURL = URL.createObjectURL(res.image);
+      const element = document.getElementById('imga');
+      element.setAttribute('src', fileURL);
     });
   }
 
   ngOnInit(): void {
     this.showAboutResource();
+    this.showImageResource('/about/image');
+    this.showFileResource('/about/resume');
   }
 
 }

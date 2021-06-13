@@ -4,30 +4,31 @@
   <span class="section_subtitle"> My Introduction</span>
 
   <div class="about_container container grid">
-    <img alt="" class="about_img" src="assets/img/about.jpg">
+<!--    *ngIf=retrievedImage-->
+    <img class="about_img" id="imga"> <!-- [src]="image" -->
 
     <div class="about_data">
-      <p class="about_description">Java Developer with extensive knowledge java programming language ang spring boot projects</p>
+      <p class="about_description">{{about.description}}</p>
 
-      <div class="about_info">
-        <div>
-          <span class="about_info-title">08+</span>
-          <span class="about_info-name">Years <br> experience</span>
-        </div>
+<!--      <div class="about_info">-->
+<!--        <div>-->
+<!--          <span class="about_info-title">08+</span>-->
+<!--          <span class="about_info-name">Years <br> experience</span>-->
+<!--        </div>-->
 
-        <div>
-          <span class="about_info-title">20+</span>
-          <span class="about_info-name">Completed <br> project</span>
-        </div>
+<!--        <div>-->
+<!--          <span class="about_info-title">20+</span>-->
+<!--          <span class="about_info-name">Completed <br> project</span>-->
+<!--        </div>-->
 
-        <div>
-          <span class="about_info-title">05+</span>
-          <span class="about_info-name">Companies <br> worked</span>
-        </div>
-      </div>
+<!--        <div>-->
+<!--          <span class="about_info-title">05+</span>-->
+<!--          <span class="about_info-name">Companies <br> worked</span>-->
+<!--        </div>-->
+<!--      </div>-->
 
       <div class="about_buttons">
-        <a class="button button--flex" download="" href="assets/pdf/Jeremy_s_Resume.pdf">
+        <a class="button button--flex" id="cv">
           Download CV<i class="uil uil-download-alt button_icon"></i>
         </a>
       </div>
