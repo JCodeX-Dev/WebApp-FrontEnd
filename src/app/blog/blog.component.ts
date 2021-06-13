@@ -9,32 +9,33 @@ import {Blog} from './blog';
 })
 export class BlogComponent implements OnInit {
 
-  constructor(private appService: AppConfigService, private blogs: Blog[]) { }
+  blogs: Blog[];
 
-  // tslint:disable-next-line:typedef
-  modalShow(modalView){
-      modalView.classList.add('active-modal');
+  constructor(private appService: AppConfigService) {
   }
 
   // tslint:disable-next-line:typedef
-  modalClose(){
+  modalShow(modalView) {
+    modalView.classList.add('active-modal');
+  }
+
+  // tslint:disable-next-line:typedef
+  modalClose() {
     const modalViews = document.querySelectorAll('.blog_modal');
     modalViews.forEach((modalView) => {
       modalView.classList.remove('active-modal');
     });
   }
 
-  // resource handling
-
   // tslint:disable-next-line:typedef
-  showBlogResource(){
+  showBlogResource() {
     this.appService.getBlogResource().subscribe((data: Blog[]) => {
       this.blogs = data;
     });
   }
 
   ngOnInit(): void {
-    this.showBlogResource();
+    // this.showBlogResource();
   }
 
 }
