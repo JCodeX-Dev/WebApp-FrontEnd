@@ -28,18 +28,11 @@ export class FooterComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   showFooterResource(){
-    this.appService.getFooterResource().subscribe((data: Footer) => this.footer = {
-      name: data.name,
-      github: data.github,
-      stackoverflow: data.stackoverflow,
-      instagram: data.instagram,
-      linkedin: data.linkedin,
-      twitter: data.twitter
-    });
+    this.appService.getFooterResource().subscribe((data: Footer) => this.footer = data);
   }
 
   ngOnInit(): void {
-    // this.showFooterResource();
+    this.showFooterResource();
   }
 
 }
