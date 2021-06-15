@@ -16,15 +16,11 @@ export class ContactComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   showContactResource() {
-    this.appService.getContactResource().subscribe((data: Contact) => this.contact = {
-      phone: data.phone,
-      email: data.email,
-      location: data.location
-    });
+    this.appService.getContactResource().subscribe((data: Contact) => this.contact = data);
   }
 
   ngOnInit(): void {
-    // this.showContactResource();
+    this.showContactResource();
   }
 
 }
