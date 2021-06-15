@@ -14,8 +14,8 @@
       <!--      </ul>-->
 
       <div class="footer_socials">
-        <a class="footer_social" href="{{item.url}}" target="_blank" *ngFor="let item of footerItems | async">
-          <i class='bx {{item.icon}}'></i>
+        <a class="footer_social" href="{{data.url}}" target="_blank" *ngFor="let data of footerItems">
+          <i class='bx {{data.icon}}'></i>
         </a>
 
       </div>
