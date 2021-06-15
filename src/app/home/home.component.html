@@ -3,7 +3,7 @@
   <div class="home_container container grid">
     <div class="home_content grid">
       <div class="home_social" >
-        <a class="home_social-icon" href="{{item.url}}" target="_blank" *ngFor="let item of homeItems$ | async">
+        <a class="home_social-icon" href="{{item.url}}" target="_blank" *ngFor="let item of homeItems">
           <i class="uil {{item.icon}}"></i>
         </a>
       </div>
