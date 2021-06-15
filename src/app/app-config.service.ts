@@ -25,7 +25,6 @@ export class AppConfigService {
 
   // tslint:disable-next-line:typedef
   getHeaderResource() {
-    console.log('running');
     return this.http.get<Header>(this.apiEndpoint + apiResource.header).pipe(retry(3), catchError(this.handleError));
   }
 
