@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Home} from './home';
 import {AppConfigService} from '../app-config.service';
-import {map} from 'rxjs/operators';
 import {apiResource} from '../../environments/environment';
 
 @Component({
@@ -16,18 +15,18 @@ export class HomeComponent implements OnInit {
   constructor(private appService: AppConfigService) {
   }
 
-  homeItems$;
+  homeItems;
 
   // tslint:disable-next-line:typedef
   showHomeResource() {
-    this.homeItems$ = this.appService.getHomeResource().pipe(map((data: Home) => {
+    this.appService.getHomeResource().subscribe((data: Home) => {
       this.home = data;
-      return [
+      this.homeItems = [
         {url: this.home.linkedin, icon: 'uil-linkedin-alt'},
         {url: this.home.github, icon: 'uil-github-alt'},
         {url: this.home.twitter, icon: 'uil-twitter-alt'}
       ];
-    }));
+    });
   }
 
   // tslint:disable-next-line:typedef
