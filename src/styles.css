@@ -213,6 +213,15 @@ img {
   background-color: var(--text-color-light);
 }
 
+/*==================== SWIPER ====================*/
+.swiper-pagination-bullet{
+  background-color: var(--text-color) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--first-color) !important;
+}
+
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
 @media screen and (max-width: 350px) {
