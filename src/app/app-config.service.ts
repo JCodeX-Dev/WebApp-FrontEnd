@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {apiResource, baseURL, profile} from '../environments/environment';
+import {apiResource, baseURL, profile, profileAPI} from '../environments/environment';
 import {Header} from './header/header';
 import {Home} from './home/home';
 import {About} from './about/about';
@@ -18,7 +18,7 @@ import {Blog} from './blog/blog';
 })
 export class AppConfigService {
 
-  apiEndpoint = baseURL + profile;
+  apiEndpoint = baseURL + profileAPI + profile;
 
   constructor(private http: HttpClient) {
   }
