@@ -41,7 +41,7 @@ export class ProjectComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.showSwiper();
-    // this.showProjectResource();
+    this.showProjectResource();
   }
 
 }
