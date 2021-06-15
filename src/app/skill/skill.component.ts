@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Skill} from './skill';
+import {AppConfigService} from '../app-config.service';
 
 @Component({
   selector: 'app-skill',
@@ -7,7 +9,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SkillComponent implements OnInit {
 
-  constructor() {
+  skills: Skill[];
+  constructor(private appService: AppConfigService) {
   }
 
   // tslint:disable-next-line:typedef
@@ -24,8 +27,13 @@ export class SkillComponent implements OnInit {
     }
   }
 
+  // tslint:disable-next-line:typedef
+  showSkillsResource(){
+    this.appService.getSkillResource().subscribe(( data: Skill[]) => this.skills = data);
+  }
 
   ngOnInit(): void {
+    this.showSkillsResource();
   }
 
 }
