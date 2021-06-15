@@ -1,4 +1,4 @@
-import {AfterViewInit, Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Navigation, Pagination, Swiper} from 'swiper/core';
 import {AppConfigService} from '../app-config.service';
 import {Project} from './project';
@@ -10,7 +10,7 @@ Swiper.use([Navigation, Pagination]);
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css']
 })
-export class ProjectComponent implements AfterViewInit {
+export class ProjectComponent implements OnInit {
   swiper: Swiper;
 
   project: Project[];
@@ -39,7 +39,7 @@ export class ProjectComponent implements AfterViewInit {
     this.appService.getProjectResource().subscribe((data: Project[]) => this.project = data);
   }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this.showSwiper();
     this.showProjectResource();
   }
