@@ -1,6 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {AppConfigService} from '../app-config.service';
 import {Footer} from './footer';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-footer',
@@ -10,6 +11,7 @@ import {Footer} from './footer';
 export class FooterComponent implements OnInit {
 
   footer: Footer;
+  footerItems;
   constructor(private appService: AppConfigService) {
   }
 
@@ -28,7 +30,16 @@ export class FooterComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   showFooterResource(){
-    this.appService.getFooterResource().subscribe((data: Footer) => this.footer = data);
+    this.footerItems = this.appService.getFooterResource().pipe(map((data: Footer) => {
+      this.footer = data;
+      return [
+        {url: this.footer.linkedin, icon: 'bxl-linkedin'},
+        {url: this.footer.twitter, icon: 'bxl-twitter'},
+        {url: this.footer.instagram, icon: 'bxl-instagram'},
+        {url: this.footer.stackoverflow, icon: 'bxl-stack-overflow'},
+        {url: this.footer.github, icon: 'bxl-github'}
+      ];
+    }));
   }
 
   ngOnInit(): void {
