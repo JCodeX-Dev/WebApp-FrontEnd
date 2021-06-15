@@ -4,7 +4,7 @@ import {apiResource, baseURL, profile, profileAPI} from '../environments/environ
 import {Header} from './header/header';
 import {Home} from './home/home';
 import {About} from './about/about';
-import {Skills} from './skill/skills';
+import {Skill} from './skill/skill';
 import {Qualification} from './qualification/qualification';
 import {Project} from './project/project';
 import {Contact} from './contact/contact';
@@ -41,7 +41,7 @@ export class AppConfigService {
 
   // tslint:disable-next-line:typedef
   getSkillResource() {
-    return this.http.get<Skills>(this.apiEndpoint + apiResource.skills).pipe(retry(3), catchError(this.handleError));
+    return this.http.get<Skill[]>(this.apiEndpoint + apiResource.skills).pipe(retry(3), catchError(this.handleError));
   }
 
 // tslint:disable-next-line:typedef
