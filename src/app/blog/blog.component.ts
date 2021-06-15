@@ -35,7 +35,7 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.showBlogResource();
+    this.showBlogResource();
   }
 
 }
