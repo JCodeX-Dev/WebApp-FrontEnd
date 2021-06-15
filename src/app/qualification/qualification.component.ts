@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AppConfigService} from '../app-config.service';
+import {Qualification} from './qualification';
 
 @Component({
   selector: 'app-qualification',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QualificationComponent implements OnInit {
 
-  constructor() { }
+  qualification: Qualification;
+  constructor(private appService: AppConfigService) { }
 
   // tslint:disable-next-line:typedef
   toggleTab(tab, tabc){
@@ -23,7 +26,13 @@ export class QualificationComponent implements OnInit {
     tabc.classList.remove('qualification_inactive');
   }
 
+  // tslint:disable-next-line:typedef
+  showQualificationResource(){
+    this.appService.getQualificationResource().subscribe((data: Qualification) => this.qualification = data );
+  }
+
   ngOnInit(): void {
+    this.showQualificationResource();
   }
 
 }
