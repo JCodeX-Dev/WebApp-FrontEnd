@@ -3,7 +3,7 @@
   <div class="footer_bg">
     <div class="footer_container container grid">
       <div>
-        <h1 class="footer_title">Jeremy Sam</h1>
+        <h1 class="footer_title">{{footer.name}}</h1>
         <!--        <span class="footer_subtitle">Frontend Developer</span>-->
       </div>
 
@@ -14,20 +14,8 @@
       <!--      </ul>-->
 
       <div class="footer_socials">
-        <a class="footer_social" href="" target="_blank">
-          <i class='bx bxl-linkedin'></i>
-        </a>
-        <a class="footer_social" href="" target="_blank">
-          <i class='bx bxl-twitter'></i>
-        </a>
-        <a class="footer_social" href="" target="_blank">
-          <i class='bx bxl-instagram'></i>
-        </a>
-        <a class="footer_social" href="" target="_blank">
-          <i class='bx bxl-stack-overflow'></i>
-        </a>
-        <a class="footer_social" href="" target="_blank">
-          <i class='bx bxl-github'></i>
+        <a class="footer_social" href="{{item.url}}" target="_blank" *ngFor="let item of footerItems | async">
+          <i class='bx {{item.icon}}'></i>
         </a>
 
       </div>
