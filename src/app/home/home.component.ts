@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Home} from './home';
 import {AppConfigService} from '../app-config.service';
 import {map} from 'rxjs/operators';
+import {apiResource} from '../../environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -40,7 +41,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.showHomeResource();
-    this.showImageResource('/home/image');
+    this.showImageResource(apiResource.home + '/image');
   }
 
 }

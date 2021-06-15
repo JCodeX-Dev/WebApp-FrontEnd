@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AppConfigService} from '../app-config.service';
 import {About} from './about';
+import {apiResource} from '../../environments/environment';
 
 // import * as fileSaver from 'file-saver';
 
@@ -45,8 +46,8 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.showAboutResource();
-    this.showImageResource('/about/image');
-    this.showFileResource('/about/resume');
+    this.showImageResource(apiResource.about + '/image');
+    this.showFileResource(apiResource.about + '/resume');
   }
 
 }
